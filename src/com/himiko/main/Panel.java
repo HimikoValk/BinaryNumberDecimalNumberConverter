@@ -1,8 +1,5 @@
 package com.himiko.main;
 
-
-
-
 import com.himiko.ui.handler.ScreenHandler;
 
 import javax.swing.*;
