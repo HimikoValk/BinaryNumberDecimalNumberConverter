@@ -15,9 +15,6 @@ import java.awt.image.BufferedImage;
 
 public class Panel extends JPanel {
 
-
-    private BufferedImage background;
-
     public Panel()
     {
         this.setLayout(null);
