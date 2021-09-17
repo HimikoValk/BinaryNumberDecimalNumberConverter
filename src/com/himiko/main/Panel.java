@@ -15,7 +15,6 @@ public class Panel extends JPanel {
     public Panel()
     {
         this.setLayout(null);
-        this.background = null;
     }
 
     @Override
