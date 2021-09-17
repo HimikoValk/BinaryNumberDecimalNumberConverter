@@ -32,8 +32,6 @@ public class Panel extends JPanel {
 
         g.fillRect(0,0, Main.WIDTH, Main.HEIGHT);
 
-        g.drawImage(background, 0, 0, null);
-
         ScreenHandler.INSTANCE.getCurrentScreen().render(g);
 
         super.repaint();
