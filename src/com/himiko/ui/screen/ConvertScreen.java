@@ -112,14 +112,13 @@ public class ConvertScreen extends Screen {
     private int getUserDualNumber()
     {
        int jml = Integer.parseInt(dualNumber.getText());
-
         return jml;
     }
 
     private int getUserDecimalNumber()
     {
-        int jml=  Integer.parseInt(decimalNumber.getText());
 
+        int jml = Integer.parseInt(decimalNumber.getText());
         return jml;
     }
 

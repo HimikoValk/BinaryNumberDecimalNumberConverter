@@ -26,11 +26,10 @@ public class Main {
                     public void run() {
                         try {
                             DualNumber.convertDecimalNumberToDualNumber(10);
-
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                        WINDOW = new Window(WIDTH, HEIGHT, "Binear/Decimal number Converter");
+                        WINDOW = new Window(WIDTH, HEIGHT, "Binear/Decimal number Converter | Developer himiko");
                         ScreenHandler.INSTANCE.setCurrentScreen(ScreenHandler.CONVERT_SCREEN);
                     }
                 });
