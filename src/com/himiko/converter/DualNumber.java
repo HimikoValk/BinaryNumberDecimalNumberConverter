@@ -37,10 +37,11 @@ public class DualNumber {
 
     public static void convertDecimalNumberToDualNumber(int userNumber) throws Exception{
 
-        shift = 0;
-        int copyDecimalNumber = userNumber;
+        int decimal = userNumber;
+        int shift = 0;
+        int copyDecimalNumber = decimal;
 
-        System.out.println("User Decimal Number:" + userNumber + ConsoleColor.ANSI_WHITE +"\nStarting to Convert!");
+        System.out.println("User Decimal Number:" + decimal + ConsoleColor.ANSI_WHITE +"\nStarting to Convert!");
 
         while(copyDecimalNumber != 0)
         {
@@ -53,9 +54,10 @@ public class DualNumber {
 
         for(int i = 0; i < shift; i++)
         {
-            numbers[i] = userNumber % 2;
-            userNumber = userNumber / 2;
+            numbers[i] = decimal % 2;
+            decimal = decimal / 2;
         }
+
         for(int i = shift - 1; i>= 0; i--)
         {
            result[i] = numbers[i];
@@ -77,8 +79,9 @@ public class DualNumber {
         {
             s.append(i);
         }
+        String number = s.reverse().toString();
 
-        return  Integer.parseInt(s.toString());
+        return  Integer.parseInt(number);
     }
 
 }

@@ -26,6 +26,7 @@ public class Main {
                     public void run() {
                         try {
                             DualNumber.convertDecimalNumberToDualNumber(10);
+
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
