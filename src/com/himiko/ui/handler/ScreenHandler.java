@@ -10,7 +10,7 @@ import com.himiko.ui.utils.Screen;
 
 public class ScreenHandler {
 
-    public final  static ScreenHandler INSTANCE = new ScreenHandler();
+    public final static ScreenHandler INSTANCE = new ScreenHandler();
 
     private Screen currentScreen;
 

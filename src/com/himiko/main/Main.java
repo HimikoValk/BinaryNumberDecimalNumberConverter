@@ -24,6 +24,11 @@ public class Main {
                 EventQueue.invokeLater(new Runnable() {
                     @Override
                     public void run() {
+                        try {
+                            DualNumber.convertDecimalNumberToDualNumber(10);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         WINDOW = new Window(WIDTH, HEIGHT, "Binear/Decimal number Converter");
                         ScreenHandler.INSTANCE.setCurrentScreen(ScreenHandler.CONVERT_SCREEN);
                     }
