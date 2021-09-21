@@ -1,5 +1,6 @@
 package com.himiko.converter;
 
+import com.himiko.ui.screen.ConvertScreen;
 import com.himiko.utils.ConsoleColor;
 
 import java.awt.*;
@@ -28,7 +29,7 @@ public class DualNumber {
         while(dualNumber !=0)
         {
             residualValue = dualNumber % 10; // Comma shift // DE: Restwert nach Kommaverschiebung aus letzten Durchlauf
-            decimalNumber = decimalNumber+(int)(residualValue*(Math.pow(2, shift))); //Summed up intermediate values
+            decimalNumber = decimalNumber+(int)(residualValue*(Math.pow(ConvertScreen.getComboBoxValue(), shift))); //Summed up intermediate values
             dualNumber = dualNumber / 10;
             shift = shift+1;
         }
@@ -54,8 +55,8 @@ public class DualNumber {
 
         for(int i = 0; i < shift; i++)
         {
-            numbers[i] = decimal % 2;
-            decimal = decimal / 2;
+            numbers[i] = decimal % ConvertScreen.getComboBoxValue(); //Default Value = 2
+            decimal = decimal /ConvertScreen.getComboBoxValue();
         }
 
         for(int i = shift - 1; i>= 0; i--)

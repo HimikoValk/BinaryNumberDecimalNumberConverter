@@ -1,7 +1,5 @@
 package com.himiko.main;
 
-
-
 import com.himiko.converter.DualNumber;
 import com.himiko.ui.handler.ScreenHandler;
 
@@ -25,6 +23,7 @@ public class Main {
                     @Override
                     public void run() {
                         try {
+                            //Fix the NullPointerException
                             DualNumber.convertDecimalNumberToDualNumber(10);
                         } catch (Exception e) {
                             e.printStackTrace();
