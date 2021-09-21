@@ -22,12 +22,8 @@ public class Main {
                 EventQueue.invokeLater(new Runnable() {
                     @Override
                     public void run() {
-                        try {
-                            //Fix the NullPointerException
-                            DualNumber.convertDecimalNumberToDualNumber(10);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
+                        //Fix the NullPointerException
+                        DualNumber.convertDecimalNumberToDualNumber(10);
                         WINDOW = new Window(WIDTH, HEIGHT, "Binear/Decimal number Converter | Developer himiko");
                         ScreenHandler.INSTANCE.setCurrentScreen(ScreenHandler.CONVERT_SCREEN);
                     }

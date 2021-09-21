@@ -19,7 +19,7 @@ public class DualNumber {
     private static int result[];
 
     // Dual = Binary // DE: Dualzahl = Binearzahl
-    public static void convertDualNumberToDecimalNumber(int number) throws Exception {
+    public static void convertDualNumberToDecimalNumber(int number){
          int dualNumber = number;
          shift = 0;
          decimalNumber = 0;
@@ -36,7 +36,7 @@ public class DualNumber {
         System.out.println(ConsoleColor.ANSI_GREEN +"Convert Finished!\nUser Decimal number:" + decimalNumber + ConsoleColor.ANSI_WHITE);
     }
 
-    public static void convertDecimalNumberToDualNumber(int userNumber) throws Exception{
+    public static void convertDecimalNumberToDualNumber(int userNumber){
 
         int decimal = userNumber;
         int shift = 0;
