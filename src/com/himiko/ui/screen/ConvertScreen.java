@@ -1,6 +1,6 @@
 package com.himiko.ui.screen;
 
-import com.himiko.converter.DualNumber;
+import com.himiko.converter.Converter;
 import com.himiko.main.Main;
 import com.himiko.ui.listener.IScreenListener;
 import com.himiko.ui.utils.Screen;
@@ -43,7 +43,7 @@ public class ConvertScreen extends Screen {
         this.convertDualNumber.addActionListener(e -> {
 
             try {
-                DualNumber.convertDualNumberToDecimalNumber(getUserDualNumber());
+                Converter.convertDualNumberToDecimalNumber(getUserDualNumber());
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -54,7 +54,7 @@ public class ConvertScreen extends Screen {
         this.convertDecimalNumber.addActionListener(e -> {
 
             try {
-                DualNumber.convertDecimalNumberToDualNumber(getUserDecimalNumber());
+                Converter.convertDecimalNumberToDualNumber(getUserDecimalNumber());
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -163,10 +163,10 @@ public class ConvertScreen extends Screen {
         int textWidth = g.getFontMetrics().stringWidth(title);
         g.drawString(title ,Main.WIDTH / 2 -  textWidth / 2, 30);
 
-        String decimalResult = "Decimal Result:" + DualNumber.getDecimalNumber();
+        String decimalResult = "Decimal Result:" + Converter.getDecimalNumber();
         g.drawString(decimalResult ,Main.WIDTH / 2 -  textWidth / 2 - 50, 140);
 
-        String dualResult = "Dual Result:" + DualNumber.getDualNumber();
+        String dualResult = "Dual Result:" + Converter.getDualNumber();
         g.drawString(dualResult, Main.WIDTH / 2 -  textWidth / 2 - 50, 180);
 
         g.drawString("Dual Number:" ,dualNumber.getX() - 180, dualNumber.getY() + 20);
