@@ -178,15 +178,12 @@ public class ConvertScreen extends Screen {
 
     private int getUserDualNumber()
     {
-       int jml = Integer.parseInt(dualNumber.getText());
-        return jml;
+        return Integer.parseInt(dualNumber.getText());
     }
 
     private int getUserDecimalNumber()
     {
-
-        int jml = Integer.parseInt(decimalNumber.getText());
-        return jml;
+        return Integer.parseInt(decimalNumber.getText());
     }
 
     public static void setComboBoxValue(int value)
