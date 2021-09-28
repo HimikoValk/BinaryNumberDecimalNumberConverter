@@ -23,8 +23,8 @@ public class Main {
                     @Override
                     public void run() {
                         //Fix the NullPointerException
-                        DualNumber.convertDecimalNumberToDualNumber(10);
-                        WINDOW = new Window(WIDTH, HEIGHT, "Binear/Decimal number Converter | Developer himiko");
+                        DualNumber.convertDecimalNumberToDualNumber(01);
+                        WINDOW = new Window(WIDTH, HEIGHT, "Binary/Decimal number Converter | Developer himiko");
                         ScreenHandler.INSTANCE.setCurrentScreen(ScreenHandler.CONVERT_SCREEN);
                     }
                 });
