@@ -22,7 +22,7 @@ public class Main {
                     @Override
                     public void run() {
                         //Fix the NullPointerException
-                        Converter.convertDecimalNumberToDualNumber(01);
+                        Converter.convertDecimalNumberToDualNumber("1");
                         WINDOW = new Window(WIDTH, HEIGHT, "Binary/Decimal number Converter | Developer himiko");
                         ScreenHandler.INSTANCE.setCurrentScreen(ScreenHandler.CONVERT_SCREEN);
                     }

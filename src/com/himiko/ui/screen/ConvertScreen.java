@@ -1,6 +1,6 @@
 package com.himiko.ui.screen;
 
-import com.himiko.converter.DualNumber;
+import com.himiko.converter.Converter;
 import com.himiko.main.Main;
 import com.himiko.ui.listener.IScreenListener;
 import com.himiko.ui.utils.Screen;
@@ -14,7 +14,7 @@ import java.awt.*;
 
 public class ConvertScreen extends Screen {
 
-    private static String[] adicList =  {"1", "2", "3", "4", "5", "6" , "7", "8", "9", "10", "11", "12", "13", "14", "15"};
+    private static String[] adicList =  {"1", "2", "3", "4", "5", "6" , "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"};
     private static int adicNumbers = 2;
     //Swing Elements
     private TextField dualNumber;
@@ -43,7 +43,7 @@ public class ConvertScreen extends Screen {
         this.convertDualNumber.addActionListener(e -> {
 
             try {
-                DualNumber.convertDualNumberToDecimalNumber(getUserDualNumber());
+                Converter.convertDualNumberToDecimalNumber(getUserDualNumber());
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -54,7 +54,8 @@ public class ConvertScreen extends Screen {
         this.convertDecimalNumber.addActionListener(e -> {
 
             try {
-                DualNumber.convertDecimalNumberToDualNumber(getUserDecimalNumber());
+                Converter.resetHexOutPut();
+                Converter.convertDecimalNumberToDualNumber(getUserDecimalNumber());
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -111,6 +112,9 @@ public class ConvertScreen extends Screen {
                 case 14:
                     setComboBoxValue(15);
                     break;
+                case 15:
+                    setComboBoxValue(16);
+                    break;
                 default:
                     setComboBoxValue(2);
                     break;
@@ -163,10 +167,10 @@ public class ConvertScreen extends Screen {
         int textWidth = g.getFontMetrics().stringWidth(title);
         g.drawString(title ,Main.WIDTH / 2 -  textWidth / 2, 30);
 
-        String decimalResult = "Decimal Result:" + DualNumber.getDecimalNumber();
+        String decimalResult = "Decimal Result:" + Converter.getDecimalNumber();
         g.drawString(decimalResult ,Main.WIDTH / 2 -  textWidth / 2 - 50, 140);
 
-        String dualResult = "Dual Result:" + DualNumber.getDualNumber();
+        String dualResult = "Dual Result:" + Converter.getDualNumber();
         g.drawString(dualResult, Main.WIDTH / 2 -  textWidth / 2 - 50, 180);
 
         g.drawString("Dual Number:" ,dualNumber.getX() - 180, dualNumber.getY() + 20);
@@ -176,14 +180,14 @@ public class ConvertScreen extends Screen {
         g.drawString("Adic System:", comboBox.getX() - 20, comboBox.getY() - 20);
     }
 
-    private int getUserDualNumber()
+    private String getUserDualNumber()
     {
-        return Integer.parseInt(dualNumber.getText());
+        return dualNumber.getText();
     }
 
-    private int getUserDecimalNumber()
+    private String getUserDecimalNumber()
     {
-        return Integer.parseInt(decimalNumber.getText());
+        return decimalNumber.getText();
     }
 
     public static void setComboBoxValue(int value)
