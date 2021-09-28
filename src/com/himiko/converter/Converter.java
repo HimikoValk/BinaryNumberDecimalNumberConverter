@@ -11,7 +11,7 @@ import java.util.Arrays;
  * @Author himiko
  */
 
-public class DualNumber {
+public class Converter {
 
     private static int shift; //number shift // DE: Anzahl der Stellen(Verschiebungen) mit dem Start Wert 0
     private static int decimalNumber;

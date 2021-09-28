@@ -1,9 +1,8 @@
 package com.himiko.main;
 
-import com.himiko.converter.DualNumber;
+import com.himiko.converter.Converter;
 import com.himiko.ui.handler.ScreenHandler;
 
-import javax.swing.*;
 import java.awt.*;
 
 /**
@@ -23,7 +22,7 @@ public class Main {
                     @Override
                     public void run() {
                         //Fix the NullPointerException
-                        DualNumber.convertDecimalNumberToDualNumber(01);
+                        Converter.convertDecimalNumberToDualNumber(01);
                         WINDOW = new Window(WIDTH, HEIGHT, "Binary/Decimal number Converter | Developer himiko");
                         ScreenHandler.INSTANCE.setCurrentScreen(ScreenHandler.CONVERT_SCREEN);
                     }
