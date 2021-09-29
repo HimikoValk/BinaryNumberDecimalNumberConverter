@@ -14,10 +14,10 @@ import java.util.Arrays;
 public class Converter {
 
     private static int shift; //number shift // DE: Anzahl der Stellen(Verschiebungen) mit dem Start Wert 0
-    private static int decimalNumber;
-    private static int residualValue; //resideValue as between result // DE: Restwert als ZwischenErgebnis
-    private static int result[];
-    private static String hexDecimal;
+    private static int decimalNumber; //saves decimalNumber
+    private static int residualValue; //residualValue as between result // DE: Restwert als ZwischenErgebnis
+    private static int result[]; // saves result
+    private static String hexDecimal; //
 
     // Dual = Binary // DE: Dualzahl = Binearzahl
     public static void convertDualNumberToDecimalNumber(String number){
@@ -25,7 +25,6 @@ public class Converter {
          {
              decimalNumber = Integer.parseInt(number, ConvertScreen.getComboBoxValue());
          }else {
-
              int userNumber = Integer.parseInt(number);
              shift = 0;
              decimalNumber = 0;
