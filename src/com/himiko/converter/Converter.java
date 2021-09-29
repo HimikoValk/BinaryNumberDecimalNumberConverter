@@ -36,7 +36,7 @@ public class Converter {
                  residualValue = userNumber % 10; // Comma shift // DE: Restwert nach Kommaverschiebung aus letzten Durchlauf
                  decimalNumber = decimalNumber + (int) (residualValue * (Math.pow(ConvertScreen.getComboBoxValue(), shift))); //Summed up intermediate values
                  userNumber = userNumber / 10;
-                 shift = shift + 1;
+                 shift++;
              }
 
          }
