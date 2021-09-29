@@ -17,7 +17,7 @@ public class Converter {
     private static int decimalNumber; //saves decimalNumber
     private static int residualValue; //residualValue as between result // DE: Restwert als ZwischenErgebnis
     private static int result[]; // saves result
-    private static String hexDecimal; //
+    private static String hexDecimal; //Saves hexDecimal result
 
     // Dual = Binary // DE: Dualzahl = Binearzahl
     public static void convertDualNumberToDecimalNumber(String number){
@@ -33,8 +33,8 @@ public class Converter {
              System.out.println("User Dual Number:" + number + ConsoleColor.ANSI_WHITE + "\nStarting to Convert!");
              while (userNumber != 0) {
                  residualValue = userNumber % 10; // Comma shift // DE: Restwert nach Kommaverschiebung aus letzten Durchlauf
-                 decimalNumber = decimalNumber + (int) (residualValue * (Math.pow(ConvertScreen.getComboBoxValue(), shift))); //Summed up intermediate values
-                 userNumber = userNumber / 10;
+                 decimalNumber = decimalNumber + (int) (residualValue * (Math.pow(ConvertScreen.getComboBoxValue(), shift))); //Summed up intermediate values // Ansteigende Zwischen werte
+                 userNumber = userNumber / 10; //New Comma shift
                  shift++;
              }
 
@@ -49,19 +49,18 @@ public class Converter {
 
         if(ConvertScreen.getComboBoxValue() > 10)
         {
-            int rem;
+            residualValue = 0;
             char hexchars[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
             while (userNumber != 0)
             {
-                rem = userNumber  %  ConvertScreen.getComboBoxValue();
-                hexDecimal = hexchars[rem] + hexDecimal;
+                residualValue = userNumber  %  ConvertScreen.getComboBoxValue(); //Saves Residual Value in hexadecimal Array // DE: Speichert den Rest im hexadezimal Array
+                hexDecimal = hexchars[residualValue] + hexDecimal; //Saves the result
                 userNumber = userNumber / ConvertScreen.getComboBoxValue();
             }
 
         }
         else
         {
-
             int copyDecimalNumber = userNumber; // added Variable for shift // DE: Die Dezimalzahl wird am Ende der While-Schleife Null sein deswegen wurde eine Kopie der Value erstellt
 
             System.out.println("User Decimal Number:" + userNumber + ConsoleColor.ANSI_WHITE +"\nStarting to Convert!");
@@ -82,6 +81,7 @@ public class Converter {
                 userNumber = userNumber /ConvertScreen.getComboBoxValue();
             }
 
+            //reverse the number
             for(int i = shift - 1; i>= 0; i--)
             {
                 result[i] = number[i];
