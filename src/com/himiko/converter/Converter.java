@@ -21,11 +21,12 @@ public class Converter {
 
     // Dual = Binary // DE: Dualzahl = Binearzahl
     public static void convertDualNumberToDecimalNumber(String number){
+        //Both algorithms give the same result // DE: Beide Algorithmen geben das gleiche ergebnis aus (hab das mit absicht gemacht fürs bessere verstehen)
          if(ConvertScreen.getComboBoxValue() > 10)
          {
-             decimalNumber = Integer.parseInt(number, ConvertScreen.getComboBoxValue());
+             decimalNumber = Integer.parseInt(number, ConvertScreen.getComboBoxValue()); //Converts the string into the desired number system
          }else {
-             int userNumber = Integer.parseInt(number);
+             int userNumber = Integer.parseInt(number); //Converts the string to an integer
              shift = 0;
              decimalNumber = 0;
              residualValue = 0;
@@ -35,6 +36,7 @@ public class Converter {
                  residualValue = userNumber % 10; // Comma shift // DE: Restwert nach Kommaverschiebung aus letzten Durchlauf
                  decimalNumber = decimalNumber + (int) (residualValue * (Math.pow(ConvertScreen.getComboBoxValue(), shift))); //Summed up intermediate values // Ansteigende Zwischen werte
                  userNumber = userNumber / 10; //New Comma shift
+                 System.out.println(userNumber);
                  shift++;
              }
 
